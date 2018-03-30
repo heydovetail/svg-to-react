@@ -1,0 +1,56 @@
+{
+  "name": "@heydovetail/svg-to-react",
+  "version": "0.1.0",
+  "description": "Generate React components from SVGs",
+  "main": "./lib.commonjs/index.js",
+  "types": "./lib.commonjs/index.d.ts",
+  "bin": {
+    "svg-to-react": "./bin/svg-to-react"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.lib.commonjs.json",
+    "prepublishOnly": "npm run build",
+    "test": "tslint -p tsconfig.json && ./node_modules/.bin/jest --runInBand",
+    "precommit": "lint-staged"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:heydovetail/svg-to-react.git"
+  },
+  "author": "Bradley Ayers <brad@dovetailapp.com>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@heydovetail/editorconfig": "^2.0.0",
+    "@heydovetail/tslint-config": "^1.1.0",
+    "@types/ajv": "^1.0.0",
+    "@types/glob": "^5.0.35",
+    "@types/node": "^9.6.1",
+    "@types/prettier": "^1.10.0",
+    "@types/react": "^16.1.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
+    "react": "^16.2.0",
+    "tslint": "^5.9.1",
+    "typescript": "^2.8.1"
+  },
+  "dependencies": {
+    "ajv": "^6.4.0",
+    "chalk": "^2.3.2",
+    "glob": "^7.1.2",
+    "h2x-core": "^0.1.9",
+    "h2x-plugin-jsx": "^0.1.9",
+    "prettier": "^1.11.1",
+    "svgo": "^1.0.5",
+    "tslib": "^1.9.0"
+  },
+  "lint-staged": {
+    "*.tsx": [
+      "prettier --write",
+      "tslint -p tsconfig.json --fix",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "printWidth": 128
+  }
+}
