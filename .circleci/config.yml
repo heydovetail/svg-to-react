@@ -15,7 +15,10 @@ aliases:
     run:
       name: Install node modules
       command: |
+        npm install -g greenkeeper-lockfile
+        greenkeeper-lockfile-update
         npm install
+        greenkeeper-lockfile-upload
         git checkout HEAD -- package-lock.json
 
   cache_node_modules: &cache_node_modules
