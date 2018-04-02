@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`runner project-no-config 1`] = `
+Map {
+  "project-no-config/Empty.tsx" => "// tslint:disable
+//
+//  This file was generated automatically by @heydovetail/svg-to-react and
+//  should not be manually edited.
+//
+import { createSvg } from \\"@heydovetail/svg-to-react\\";
+import * as React from \\"react\\";
+
+export default createSvg((width = 24, height = 24) => {
+  return <svg width={width} height={height} viewBox=\\"0 0 24 24\\" />;
+});
+",
+}
+`;
+
+exports[`runner project-no-config 2`] = `
+"Generating React components for 1 SVGs:
+[33m>[39m __svgs__/empty.svg
+[32m✔ __svgs__/empty.svg[39m [90m(42ms)[39m
+"
+`;
+
+exports[`runner project-with-config 1`] = `
+Map {
+  "project-with-config/empty.js" => "// tslint:disable
+//
+//  This file was generated automatically by @heydovetail/svg-to-react and
+//  should not be manually edited.
+//
+import { createSvg } from \\"@heydovetail/svg-to-react\\";
+import * as React from \\"react\\";
+
+export default createSvg((width = 24, height = 24, color) => {
+  return (
+    <svg width={width} height={height} viewBox=\\"0 0 24 24\\">
+      <g
+        fill=\\"none\\"
+        fillRule=\\"evenodd\\"
+        strokeLinecap=\\"round\\"
+        strokeLinejoin=\\"round\\"
+        strokeWidth={2}
+      >
+        <circle cx={10} cy={10} r={10} stroke={color} />
+        <circle cx={10} cy={10} r={10} stroke={color} />
+      </g>
+    </svg>
+  );
+});
+",
+}
+`;
+
+exports[`runner project-with-config 2`] = `
+"Generating React components for 1 SVGs:
+[33m>[39m __svgs__/empty.svg
+[32m✔ __svgs__/empty.svg[39m [90m(42ms)[39m
+"
+`;

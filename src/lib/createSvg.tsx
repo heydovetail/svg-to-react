@@ -1,26 +1,23 @@
 import * as React from "react";
 
-export interface CustomSize {
+export interface Size {
   width?: number;
   height?: number;
 }
 
 export interface Props {
   color?: string;
-  size?: number | CustomSize;
+  size?: number | Size;
 }
 
 /**
- * A utility for building SVG components.
+ * Build an SVG component
  *
- * It’s optimised for performance, both runtime execution and code minification.
- * This is why it takes a `displayName` (to allow DOM reconcilitation) and a
- * render function which takes separate positional arguments (for minification).
- *
- * This SVG components this function creates *never* update in response to prop
- * changes. This is a performance optimisation.
+ * Optimised for performance, both runtime execution and code minification. It
+ * uses a named component (to enable DOM reconcilitation) and a render function
+ * which uses positional arguments (for better minification).
  */
-export function svg(
+export function createSvg(
   render: (width: number | string | undefined, height: number | string | undefined, color: string) => React.ReactNode
 ) {
   return class SVG extends React.PureComponent<Props> {
