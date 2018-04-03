@@ -48,7 +48,7 @@ icons/
 
 You can now use those in your React components:
 
-```ts
+```jsx
 import * as React from "react";
 import ArrowDown from "./icons/ArrowDown";
 
