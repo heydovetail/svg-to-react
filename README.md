@@ -46,6 +46,23 @@ icons/
     └── arrow-down.svg
 ```
 
+You can now use those in your React components:
+
+```ts
+import * as React from "react";
+import ArrowDown from "./icons/ArrowDown";
+
+export function MyDownButton() {
+  return (
+    <button>
+      <span>
+        Down <ArrowDown />
+      </span>
+    </button>
+  );
+}
+```
+
 # Configuration (`.config.json`)
 
 A `.config.json` file in `__svgs__` can be used to provide configuration.
