@@ -12,7 +12,7 @@
     "build": "tsc -p tsconfig.lib.commonjs.json && tsc -p tsconfig.lib.es2015.json && tsc -p tsconfig.cli.commonjs.json",
     "clean": "rm -rf ./lib.*/ ./cli.*/",
     "prepublishOnly": "npm run build",
-    "test": "tslint -p tsconfig.json && ./node_modules/.bin/jest --runInBand",
+    "test": "tslint -p tsconfig.json && ./node_modules/.bin/jest --runInBand && npm run build",
     "precommit": "lint-staged"
   },
   "repository": {
