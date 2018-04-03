@@ -15,7 +15,7 @@ aliases:
     run:
       name: Install node modules
       command: |
-        npm install -g greenkeeper-lockfile
+        sudo npm install -g greenkeeper-lockfile
         greenkeeper-lockfile-update
         npm install
         greenkeeper-lockfile-upload
