@@ -3,6 +3,7 @@ Generate React components from SVG images.
 ![NPM version](https://img.shields.io/npm/v/@heydovetail/svg-to-react.svg)
 ![CircleCI badge](https://circleci.com/gh/heydovetail/svg-to-react.svg?style=shield&circle-token=e4858ad05b3f4459ea7ad103d6d84e8623d1a53a)
 [![Greenkeeper badge](https://badges.greenkeeper.io/heydovetail/svg-to-react.svg)](https://greenkeeper.io/)
+![Module formats](https://img.shields.io/badge/module%20formats-cjs%2C%20esm-green.svg)
 
 # Features
 
@@ -10,17 +11,16 @@ Generate React components from SVG images.
 * SVG scale preserved via `viewport`
 * Importable components with [TypeScript](http://www.typescriptlang.org/) or JavaScript
 * Modules formatted via [Prettier](https://github.com/prettier/prettier)
-* `pkg.module` ES module distribution
-* `pkg.main` CJS module distribution
-* Minimal bundle size
-* CLI
+* Tiny bundle size
+* CLI interface
 
 # Usage
 
-Install via NPM:
+Install via NPM, then run:
 
 ```sh
 npm install --save-dev @heydovetail/svg-to-react
+svg-to-react your/project/path
 ```
 
 `svg-to-react` will search a directory tree for `__svgs__` folders containing
