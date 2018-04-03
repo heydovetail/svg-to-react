@@ -6,7 +6,7 @@ Generate React components from SVG images.
 
 # Features
 
-* Props for `width`, `height`, and `currentColor`
+* Props for `size` and `color`
 * SVG scale preserved via `viewport`
 * Importable components with [TypeScript](http://www.typescriptlang.org/) or JavaScript
 * Modules formatted via [Prettier](https://github.com/prettier/prettier)
@@ -56,10 +56,24 @@ export function MyDownButton() {
   return (
     <button>
       <span>
-        Down <ArrowDown />
+        Down <ArrowDown size={48} color="red"/>
       </span>
     </button>
   );
+}
+```
+
+## React component props
+
+```ts
+interface Props {
+    color?: string;
+    size?: number | Size;
+}
+
+interface Size {
+    width?: number;
+    height?: number;
 }
 ```
 
