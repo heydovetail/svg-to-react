@@ -1,15 +1,18 @@
-Generate React components from SVG images.
-
 ![NPM version](https://img.shields.io/npm/v/@heydovetail/svg-to-react.svg)
 ![CircleCI badge](https://circleci.com/gh/heydovetail/svg-to-react.svg?style=shield&circle-token=e4858ad05b3f4459ea7ad103d6d84e8623d1a53a)
 [![Greenkeeper badge](https://badges.greenkeeper.io/heydovetail/svg-to-react.svg)](https://greenkeeper.io/)
 ![Module formats](https://img.shields.io/badge/module%20formats-cjs%2C%20esm-green.svg)
 
+Utilising a simple CLI and your existing SVG files, `svg-to-react` allows you to generate optimised React components from your SVG files. With sensible (but overridable defaults), it takes the pain out of integrating SVG images into your React project.
+
+By generating files, `svg-to-react` lets you commit React components to SCM, so you stay in complete control of final production assets.
+
 # Features
 
-* Props for `size` and `color`
+* Uses SVGO to minify SVG data
+* React props for `size` and `color`
 * SVG scale preserved via `viewport`
-* Importable components with [TypeScript](http://www.typescriptlang.org/) or JavaScript
+* Import in [TypeScript](http://www.typescriptlang.org/) or JavaScript
 * Modules formatted via [Prettier](https://github.com/prettier/prettier)
 * Tiny bundle size
 * CLI interface
