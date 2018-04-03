@@ -8,7 +8,7 @@ Generate React components from SVG images.
 
 * Props for `width`, `height`, and `currentColor`
 * SVG scale preserved via `viewport`
-* Importable components with TypeScript or JavaScript
+* Importable components with [TypeScript](http://www.typescriptlang.org/) or JavaScript
 * Modules formatted via [Prettier](https://github.com/prettier/prettier)
 * `pkg.module` ES module distribution
 * `pkg.main` CJS module distribution
@@ -46,6 +46,23 @@ icons/
     └── arrow-down.svg
 ```
 
+You can now use those in your React components:
+
+```jsx
+import * as React from "react";
+import ArrowDown from "./icons/ArrowDown";
+
+export function MyDownButton() {
+  return (
+    <button>
+      <span>
+        Down <ArrowDown />
+      </span>
+    </button>
+  );
+}
+```
+
 # Configuration (`.config.json`)
 
 A `.config.json` file in `__svgs__` can be used to provide configuration.
@@ -54,7 +71,7 @@ A `.config.json` file in `__svgs__` can be used to provide configuration.
 
 **Default:** _omitted_
 
-**Example:** Specify that the color "#000000" should be overiddable via the `color` prop.
+**Example:** Specify that the color `#000000` should be overridable via the `color` prop.
 
 ```json
 {
