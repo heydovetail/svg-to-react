@@ -19,14 +19,33 @@ Generate React components from SVG images.
 
 # Usage
 
+Install via NPM:
+
+```sh
+npm install --save-dev @heydovetail/svg-to-react
+```
+
 `svg-to-react` will search a directory tree for `__svgs__` folders containing
 SVG files (files with an `.svg` extension). For each file, a TypeScript module
 will be created in the parent directory containing a React component for the SVG.
 
+Example:
+
 ```
-src/
-..
-FILL IN
+$ tree icons/
+icons/
+└── __svgs__
+    ├── arrow-down-mini.svg
+    └── arrow-down.svg
+$ npm install -g @heydovetail/svg-to-react
+$ svg-to-react icons
+$ tree icons/
+icons/
+├── ArrowDown.tsx
+├── ArrowDownMini.tsx
+└── __svgs__
+    ├── arrow-down-mini.svg
+    └── arrow-down.svg
 ```
 
 # Configuration (`.config.json`)
@@ -34,6 +53,8 @@ FILL IN
 A `.config.json` file in `__svgs__` can be used to provide configuration.
 
 ## `color` (optional)
+
+**Default:** _omitted_
 
 **Example:** Specify that the color "#000000" should be overiddable via the `color` prop.
 
@@ -44,6 +65,8 @@ A `.config.json` file in `__svgs__` can be used to provide configuration.
 ```
 
 ## `moduleNameTemplate` (optional)
+
+**Default:** `{capitalizedCamelBaseNameNoExt}.tsx`
 
 **Example:** Specify that modules should use `.tsx` extension.
 
@@ -63,3 +86,18 @@ Available variables:
 | `camelBaseNameNoExt`            | `fooBarBaz`                 |
 | `capitalizedCamelBaseName`      | `FooBarBaz.svg`             |
 | `capitalizedCamelBaseNameNoExt` | `FooBarBaz`                 |
+
+# NPM script
+
+It's convenient to add a NPM script to your project, so that you can choose
+supply the root directoy:
+
+**Example:**
+
+```json
+{
+  "scripts": {
+    "generate:types": "svg-to-react src/"
+  }
+}
+```
