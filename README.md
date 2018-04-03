@@ -1,9 +1,7 @@
-# @heydovetail/svg-to-react
-
 Generate React components from SVG images.
 
 ![NPM version](https://img.shields.io/npm/v/@heydovetail/svg-to-react.svg)
-![CircleCI badge](https://circleci.com/gh/heydovetail/svg-to-react.svg?&style=shield&circle-token=725b76ea98f40ff114fede5bb20035465ae8a26f)
+![CircleCI badge](https://circleci.com/gh/heydovetail/svg-to-react.svg?style=shield&circle-token=e4858ad05b3f4459ea7ad103d6d84e8623d1a53a)
 [![Greenkeeper badge](https://badges.greenkeeper.io/heydovetail/svg-to-react.svg)](https://greenkeeper.io/)
 
 # Features
