@@ -8,7 +8,7 @@ Generate React components from SVG images.
 
 * Props for `width`, `height`, and `currentColor`
 * SVG scale preserved via `viewport`
-* Importable components with TypeScript or JavaScript
+* Importable components with [TypeScript](http://www.typescriptlang.org/) or JavaScript
 * Modules formatted via [Prettier](https://github.com/prettier/prettier)
 * `pkg.module` ES module distribution
 * `pkg.main` CJS module distribution
