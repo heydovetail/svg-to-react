@@ -71,7 +71,7 @@ A `.config.json` file in `__svgs__` can be used to provide configuration.
 
 **Default:** _omitted_
 
-**Example:** Specify that the color "#000000" should be overiddable via the `color` prop.
+**Example:** Specify that the color `#000000` should be overridable via the `color` prop.
 
 ```json
 {
