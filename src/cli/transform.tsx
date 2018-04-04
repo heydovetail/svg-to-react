@@ -3,10 +3,25 @@ import jsx from "h2x-plugin-jsx";
 import * as prettier from "prettier";
 import SVGO = require("svgo");
 import { Config } from "./config";
+import { sha1 } from "./util/sha1";
 
 export async function transform(svg: string, config: Config): Promise<string> {
   const svgo = new SVGO({
-    plugins: [{ removeTitle: true }, { removeViewBox: false }]
+    plugins: [
+      { removeTitle: true },
+      { removeViewBox: false },
+      {
+        cleanupIDs: {
+          // The prefix starts with the letter `a` for compatibility, to satisfy
+          // HTML 4 ID requirements. See
+          // https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id.
+          // SHA1 may start with letters or numbers, so explicitly starting with
+          // a letter is necessary. A substring from the start of the SHA1 is
+          // used to help minimise file size.
+          prefix: `a${sha1(svg).substr(0, 15)}`
+        }
+      }
+    ]
   });
   const svgOptimised = (await svgo.optimize(svg)).data;
   const { svg: svgTransformed, size } = await h2xTransform(svgOptimised, config);

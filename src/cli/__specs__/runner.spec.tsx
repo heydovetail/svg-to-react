@@ -1,7 +1,6 @@
 import "jest";
 import * as path from "path";
 import * as runner from "../runner";
-import * as stopwatch from "../util/stopwatch";
 
 class TestTextFileWriter {
   public files = new Map<string, string>();
@@ -38,4 +37,5 @@ describe(runner.runner.name, () => {
 
   it("project-no-config", () => test("project-no-config"));
   it("project-with-config", () => test("project-with-config"));
+  it("project-svg-with-ids", () => test("project-svg-with-ids"));
 });

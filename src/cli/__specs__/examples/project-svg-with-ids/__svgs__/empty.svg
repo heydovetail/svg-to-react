@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+      <radialGradient cx="50.014%" cy="54.715%" fx="50.014%" fy="54.715%" r=".07%" gradientTransform="matrix(.92431 0 0 1 .038 0)" id="empty-1" />
+    </defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+      <g id="icons/circle" stroke="#DEADBEEF" stroke-width="2">
+        <circle id="Oval" cx="10" cy="10" r="10"></circle>
+      </g>
+      <!-- The ID referenced via #empty-1 should be converted to a unique value based on the hash of the file -->
+      <g id="icons/circle" stroke="#deadbeef" stroke-width="2" fill="url(#empty-1)">
+        <circle id="Oval" cx="10" cy="10" r="10"></circle>
+      </g>
+    </g>
+</svg>
