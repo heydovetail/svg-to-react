@@ -59,7 +59,7 @@ export function MyDownButton() {
   return (
     <button>
       <span>
-        Down <ArrowDown size={48} color="red"/>
+        Down <ArrowDown size={48} color="red" />
       </span>
     </button>
   );
@@ -69,14 +69,16 @@ export function MyDownButton() {
 ## React component props
 
 ```ts
-interface Props {
-    color?: string;
-    size?: number | Size;
-}
+type CssValue = number | string;
 
 interface Size {
-    width?: number;
-    height?: number;
+  width?: CssValue;
+  height?: CssValue;
+}
+
+interface Props {
+  color?: string;
+  size?: CssValue | Size;
 }
 ```
 

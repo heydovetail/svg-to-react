@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createSvg supports number size 1`] = `
+<SVG
+  size={50}
+/>
+`;
+
+exports[`createSvg supports string size 1`] = `
+<SVG
+  size="100%"
+/>
+`;

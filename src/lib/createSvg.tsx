@@ -1,13 +1,15 @@
 import * as React from "react";
 
+export type CssValue = number | string;
+
 export interface Size {
-  width?: number;
-  height?: number;
+  width?: CssValue;
+  height?: CssValue;
 }
 
 export interface Props {
   color?: string;
-  size?: number | Size;
+  size?: CssValue | Size;
 }
 
 /**
@@ -18,13 +20,13 @@ export interface Props {
  * which uses positional arguments (for better minification).
  */
 export function createSvg(
-  render: (width: number | string | undefined, height: number | string | undefined, color: string) => React.ReactNode
+  render: (width: CssValue | undefined, height: CssValue | undefined, color: string) => React.ReactNode
 ) {
   return class SVG extends React.PureComponent<Props> {
     public render() {
       const { color = "currentColor", size = {} } = this.props;
-      const width = typeof size === "number" ? size : size.width;
-      const height = typeof size === "number" ? size : size.height;
+      const width = typeof size === "object" ? size.width : size;
+      const height = typeof size === "object" ? size.height : size;
       return <span style={{ lineHeight: 0, display: "block" }}>{render(width, height, color)}</span>;
     }
   };
