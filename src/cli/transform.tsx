@@ -3,11 +3,13 @@ import jsx from "h2x-plugin-jsx";
 import * as prettier from "prettier";
 import SVGO = require("svgo");
 import { Config } from "./config";
+import { normalizeHex } from "./util/color";
 import { sha1 } from "./util/sha1";
 
 export async function transform(svg: string, config: Config): Promise<string> {
   const svgo = new SVGO({
     plugins: [
+      { convertColors: true },
       { removeTitle: true },
       { removeViewBox: false },
       {
@@ -77,11 +79,12 @@ async function h2xTransform(svg: string, config: Config) {
 
   const { color: configColor } = config;
   if (configColor !== undefined) {
+    const normalizedConfigColor = normalizeHex(configColor);
     // Replace `#726D82` with the `color` prop, so that `currentColor` or
     // another color can be used.
     plugins.push(
       h2xPluginMutateAttr({
-        predicate: path => path.node.value.toLowerCase() === configColor.toLowerCase(),
+        predicate: path => normalizeHex(path.node.value) === normalizedConfigColor,
         mutate: path => {
           path.node.litteral = true;
           path.node.value = "color";

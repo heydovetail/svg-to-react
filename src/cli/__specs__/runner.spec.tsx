@@ -35,7 +35,9 @@ describe(runner.runner.name, () => {
     expect(logger.text).toMatchSnapshot();
   }
 
+  it("project-long-hex-color-equivalence", () => test("project-long-hex-color-equivalence"));
   it("project-no-config", () => test("project-no-config"));
-  it("project-with-config", () => test("project-with-config"));
+  it("project-short-hex-color-equivalence", () => test("project-short-hex-color-equivalence"));
   it("project-svg-with-ids", () => test("project-svg-with-ids"));
+  it("project-with-config", () => test("project-with-config"));
 });
