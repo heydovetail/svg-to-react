@@ -23,7 +23,7 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "@heydovetail/editorconfig": "^2.0.0",
-    "@heydovetail/tslint-config": "^1.1.0",
+    "@heydovetail/tslint-config": "^2.0.0",
     "@types/ajv": "^1.0.0",
     "@types/glob": "^5.0.35",
     "@types/jest": "^22.2.2",
