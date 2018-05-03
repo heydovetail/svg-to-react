@@ -1,1 +1,1 @@
-export { createSvg } from "./createSvg";
+export { createSvg, Props } from "./createSvg";

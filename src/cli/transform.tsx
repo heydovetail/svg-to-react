@@ -180,12 +180,12 @@ function renderEsModule(code: string, config: Config, size: SniffedSize) {
 //  This file was generated automatically by @heydovetail/svg-to-react and
 //  should not be manually edited.
 //
-import { createSvg } from "@heydovetail/svg-to-react";
+import { createSvg, Props } from "@heydovetail/svg-to-react";
 import * as React from 'react'
 
-export default createSvg((${args.join(", ")}) => {
-  return ${code};
-});
+export default createSvg((${args.join(", ")}): React.ReactElement<Props> => (
+  ${code}
+));
 `;
 }
 
