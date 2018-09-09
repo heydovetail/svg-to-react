@@ -1,5 +1,5 @@
 import * as path from "path";
-import yargs from "yargs";
+import * as yargs from "yargs";
 import { runner } from "./runner";
 
 export async function main() {
