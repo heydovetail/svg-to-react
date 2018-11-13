@@ -11,6 +11,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.lib.commonjs.json && tsc -p tsconfig.lib.es2015.json && tsc -p tsconfig.cli.commonjs.json",
     "clean": "rm -rf ./lib.*/ ./cli.*/",
+    "fix:yarn.lock": "./node_modules/.bin/yarn-deduplicate yarn.lock",
     "prepublishOnly": "yarn build",
     "test": "tslint -p tsconfig.json && yarn build && ./node_modules/.bin/jest --runInBand"
   },
